@@ -62,6 +62,14 @@ Run pd_compile.py with a single argument, the name of a Pure Data patch file. A 
 parsing and debugging junk will be printed, along with the generated C code. The
 generated C code is also placed in a file called "out.c".
 
+There is also a Makefile which will generate C code for a Pure Data patch file, and
+compile it with a wrapper main() function into an executable "main" that generates three
+seconds worth of audio into a zero or more dac_*.f32 files (containing 32-bit float
+sample data). The number of dac_*.f32 files is determined by the number of DAC objects
+in the patch file.
+
+This is totally half-baked test code, if you couldn't tell...
+
 License
 =======
 
