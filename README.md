@@ -45,6 +45,23 @@ void deinit() {
 }
 ```
 
+Requirements
+============
+
+To run pd_compile.py, you will need:
+
+* [Peak-Rules](https://pypi.python.org/pypi/PEAK-Rules), which is used for conditionally
+  binding visitor functions to classes of Pure Data objects. These visitor functions
+  generate C code that is run at different times over the PD patch lifespan.
+
+
+Usage
+=====
+
+Run pd_compile.py with a single argument, the name of a Pure Data patch file. A bunch of
+parsing and debugging junk will be printed, along with the generated C code. The
+generated C code is also placed in a file called "out.c".
+
 License
 =======
 
