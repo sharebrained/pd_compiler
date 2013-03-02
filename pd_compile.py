@@ -81,5 +81,3 @@ c_code = '\n'.join(lines)
 c_file = open('out.c', 'w')
 c_file.write(c_code)
 c_file.close()
-
-print(c_code)

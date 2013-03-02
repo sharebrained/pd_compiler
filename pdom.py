@@ -447,7 +447,7 @@ class ParseContext(object):
             else:
                 records = split_items
         records = map(str.strip, records)
-        print('\n'.join(records))
+        #print('\n'.join(records))
 
         for record in records:
             if len(record) and record[0] == '#':
@@ -456,7 +456,7 @@ class ParseContext(object):
         for i in range(len(self.objects)):
             o = self.objects[i]
             o.id = i
-            print('%d: %s' % (i, o))
+            #print('%d: %s' % (i, o))
 
         for i in range(len(self.connects)):
             c = self.connects[i]
@@ -465,7 +465,7 @@ class ParseContext(object):
             target_object = self.objects[c.target_index]
             inlet = target_object.inlet[c.target_inlet_index]
             inlet.source = outlet
-            print('%d: %s' % (i, c))
+            #print('%d: %s' % (i, c))
 
 def parse_patch(f):
     context = ParseContext()
