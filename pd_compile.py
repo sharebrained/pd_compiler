@@ -22,9 +22,15 @@
 # 02110-1301, USA.
 
 import sys
+import os.path
+
 import pdom
 
-parse_context = pdom.parse_patch(open(sys.argv[1], 'r'))
+input_file_path = sys.argv[1]
+input_file_base, input_file_extension = os.path.splitext(input_file_path)
+output_file_path = input_file_base + '.c'
+
+parse_context = pdom.parse_patch(open(input_file_path, 'r'))
 
 chain = []
 def walk_object_inlets(o):
@@ -78,6 +84,6 @@ for o in chain:
 lines.append('}')
 
 c_code = '\n'.join(lines)
-c_file = open('out.c', 'w')
+c_file = open(output_file_path, 'w')
 c_file.write(c_code)
 c_file.close()
