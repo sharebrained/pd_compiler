@@ -348,6 +348,10 @@ class AudioClip(DSPOperator):
         if len(parameters) > 1:
             self._hi.source = ConstantOutlet(float(parameters[1]))
 
+class Print(object):
+	def __init__(self, parameters):
+		pass
+
 object_constructor = {
     'dac~': AudioDAC,
     'phasor~': AudioPhasor,
@@ -366,6 +370,7 @@ object_constructor = {
     'cos~': AudioCosine,
     'sig~': AudioSignal,
     'clip~': AudioClip,
+	'print': Print,
 }
 
 def connect_parser(text):
